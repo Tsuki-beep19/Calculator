@@ -106,15 +106,21 @@ function hitungHasilStandar() {
     try {
        if (layar.value === "") return;
        let nilaiLayar = layar.value;
-       let rumus = layar.value.replaceAll("×", "*").replaceAll("÷", "/").replaceAll("%","/100")
-       rumus = rumus.replaceAll(",",".");
+       let rumus = layar.value.replaceAll("×", "*").replaceAll("÷", "/").replaceAll("%","/100");
+       rumus = rumus.replaceAll(",", ".");
        let rumusFinal = nilaiLayar
-        .replaceAll("×", "*").replaceAll("÷", "/").replaceAll("%","/100").replace(",",".");
+           .replaceAll("×", "*")
+           .replaceAll("÷", "/")
+           .replaceAll("%", "/100")
+           .replaceAll(",", "."); 
        let rumusAman = layar.value
-        .replaceAll("×", "*").replaceAll("÷", "/").replaceAll("%","/100").replace(".","").replace(",",".");
-       let hasil = eval(rumusAman);
-        // 2. Hitung rumus yang sudah diubah formatnya
-       
+           .replaceAll("×", "*")
+           .replaceAll("÷", "/")
+           .replaceAll("%", "/100")
+           .replaceAll(".", "")
+           .replaceAll(",", "."); 
+      
+        let hasil = eval(rumusAman);
 
         // 3. Tampilkan hasilnya
         if (isNaN(hasil) || !isFinite(hasil)) {
