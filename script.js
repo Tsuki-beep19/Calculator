@@ -105,10 +105,16 @@ function hitungHasilStandar() {
     const layar = document.getElementById("layarKalkulator");
     try {
        if (layar.value === "") return;
+       let nilaiLayar = layar.value;
        let rumus = layar.value.replaceAll("×", "*").replaceAll("÷", "/").replaceAll("%","/100")
-
+       rumus = rumus.replaceAll(",",".");
+       let rumusFinal = nilaiLayar
+        .replaceAll("×", "*").replaceAll("÷", "/").replaceAll("%","/100").replace(",",".");
+       let rumusAman = layar.value
+        .replaceAll("×", "*").replaceAll("÷", "/").replaceAll("%","/100").replace(".","").replace(",",".");
+       let hasil = eval(rumusAman);
         // 2. Hitung rumus yang sudah diubah formatnya
-        let hasil = eval(rumus);
+       
 
         // 3. Tampilkan hasilnya
         if (isNaN(hasil) || !isFinite(hasil)) {
