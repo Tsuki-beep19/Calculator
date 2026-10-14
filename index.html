@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Finansial pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Kalkulator Tabungan</h2>
+        
+        <!-- Input Data -->
+        <div class="form-group">
+            <label for="inputTabungan">Tabungan per Bulan (Rp):</label>
+            <input type="text" id="inputTabungan"
+            inputmode="numeric"
+            placeholder="Contoh: Rp500000">
+        </div>
+
+        <div class="form-group">
+            <label for="inputBulan">Jumlah Bulan:</label>
+            <input type="number" id="inputBulan" placeholder="Contoh: 12">
+        </div>
+        
+        <button id="tombolHitung">Hitung Total</button>
+
+        <!-- Hasil & Riwayat -->
+        <div class="result-box">
+
+            <h3>Hasil Perhitungan:</h3>
+            <p id="teksHasil">Rp 0</p>
+        </div>
+
+        <div class="history-box">
+            <h3>Riwayat Kalkulasi:</h3>
+            <ul id="daftarRiwayat"></ul>
+       </div>
+       <divclass="calc-box">
+      <h3>Kalkulator Standar</h3>
+      <input type="text" id="layarKalkulator" readonly placeholder="0">
+    
+      <div class="grid-tombol">
+        <button onmousedown="mulaiHapusCepat()" onmouseup="berhentiHapusCepat()" onmouseleave="berhentiHapusCepat()" ontouchstart="mulaiHapusCepat()" ontouchend="berhentiHapusCepat()">DEL</button>
+        <button onclick="tambahLayar('7')">7</button>
+        <button onclick="tambahLayar('8')">8</button>
+        <button onclick="tambahLayar('9')">9</button>
+        <button onclick="tambahLayar('+')">+</button>
+        
+        <button onclick="tambahLayar('4')">4</button>
+        <button onclick="tambahLayar('5')">5</button>
+        <button onclick="tambahLayar('6')">6</button>
+        <button onclick="tambahLayar('-')">-</button>
+        
+        <button onclick="tambahLayar('1')">1</button>
+        <button onclick="tambahLayar('2')">2</button>
+        <button onclick="tambahLayar('3')">3</button>
+        <button onclick="tambahLayar('×')">×</button>
+        
+        
+        <button onclick="hapusLayar()">C</button>
+        <button onclick="tambahLayar('0')">0</button>
+        <button onclick="hitungHasilStandar()">=</button>
+        <button onclick="tambahLayar('÷')">÷</button>
+        <button onclick="tambahLayar('%')">%</button>
+        <button onclick="tambahLayar(',')">,</button>
+    </div>
+    </div>
+
+    <!-- Menghubungkan file JavaScript di bagian paling bawah -->
+    <script src="script.js"></script>
+</body>
+</html>
